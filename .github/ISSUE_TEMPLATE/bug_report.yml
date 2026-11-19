@@ -1,0 +1,51 @@
+name: 报告问题
+description: 网站报错、出不了图、小祥不回话之类
+title: "[问题] "
+labels: ["bug"]
+body:
+  - type: dropdown
+    id: feature
+    attributes:
+      label: 哪个功能出的问题
+      options:
+        - 客服小祥聊天
+        - 出图
+        - 识图 · 反推 Prompt
+        - 画师图库
+        - 其他
+    validations:
+      required: true
+  - type: dropdown
+    id: model
+    attributes:
+      label: 聊天用的模型（客服小祥 → 设置 → 模型 ID）
+      options:
+        - DeepSeek V4 Flash
+        - Gemini 3.8 Flash High
+        - 不确定 / 跟聊天无关
+  - type: textarea
+    id: error
+    attributes:
+      label: 报错原文
+      description: 把页面上的报错整句复制过来，比如「Qwen 请求失败（429）：……」，括号里的数字和后面的内容都要。
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 当时在做什么
+      description: 点了什么、输了什么。能截图就直接贴图。
+  - type: input
+    id: time
+    attributes:
+      label: 大概什么时候
+      placeholder: 例如 北京时间 11/19 15:30
+  - type: input
+    id: device
+    attributes:
+      label: 电脑还是手机，什么浏览器
+      placeholder: 例如 电脑 Chrome / iPhone Safari
+  - type: markdown
+    attributes:
+      value: 这里是公开的，别贴 NovelAI 的 token / key、密码、邮箱手机号。截图里有的话先打码。
